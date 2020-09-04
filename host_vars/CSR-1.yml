@@ -1,0 +1,4 @@
+---
+# CRS-1 specific connectivity information
+
+ansible_user: "roger"

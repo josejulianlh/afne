@@ -1,0 +1,10 @@
+---
+## Playbook to configure things
+
+- hosts: Routers
+
+  tasks:
+    - name: configure a single command
+      ios_config:
+        lines: ntp server 9.9.9.9
+

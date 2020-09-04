@@ -1,0 +1,17 @@
+---
+## Playbook to show version on IOS
+
+- hosts: Routers
+
+  tasks:
+  - name: run show version on remote devices
+    ios_command:
+      commands: show version
+    register: version
+
+  - name: Save output to ~/afne/
+    copy:
+      content: "{{version.stdout[0]}}"
+      dest: "~/afne/{{inventory_hostname}}-version.txt"
+
+  
